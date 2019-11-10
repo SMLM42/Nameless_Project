@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 
 export default class Test extends Component {
 	componentDidMount() {
-		fetch('/')
+		fetch('/api')
 			.then(res => res.json())
 			.then(res => console.log(res));
 	}
