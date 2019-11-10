@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 import './style.css'
-class Home extends Component {
+class Page2 extends Component {
     state = {}
     render() {
         return (
             <div>
-                <p>Hello</p>
+                <p>Hello2</p>
             </div>)
     }
 }
-export default Home;
+export default Page2;
