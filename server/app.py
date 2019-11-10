@@ -1,22 +1,28 @@
 #
 
-from flask import Flask, send_file, jsonify
-from flask_cors import CORS
+from flask import Flask, jsonify
+from flask_restful import Api, Resource
+
 
 app = Flask(__name__)
-CORS(app)
+api = Api(app)
 
 
-@app.route("/")
-def root():
-    return jsonify({"status": "ok"})
+class Root(Resource):
+    """"""
+
+    ENPOINT = "/api"
+
+    def get(self):
+        """"""
+
+        return {"status": "ok"}
 
 
-@app.route("/api")
-def test_again():
-    return jsonify({"status": "ok"})
+for route in [Root]:
+    api.add_resource(Root, Root.ENPOINT)
 
 
 if __name__ == "__main__":
-    app.run(host="localhost", port=5000, debug=True)  # stops here
+    app.run(host="localhost", port=5000, debug=True)
     print("Server died")
